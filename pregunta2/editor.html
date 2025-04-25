@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Editor de Texto Dinámico</title>
+  <style>
+    #resultado {
+      color: blue;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h2>Editor de Texto Dinámico</h2>
+  <textarea id="editor" rows="5" cols="40" placeholder="Escribe aquí..."></textarea>
+  <br>
+  <button onclick="aplicarTexto()">Aplicar</button>
+  <p id="contador">Caracteres: 0</p>
+  <div id="resultado"></div>
+
+  <script>
+    const textarea = document.getElementById('editor');
+    const resultado = document.getElementById('resultado');
+    const contador = document.getElementById('contador');
+
+    function aplicarTexto() {
+      resultado.textContent = textarea.value;
+    }
+
+    textarea.addEventListener('input', () => {
+      contador.textContent = `Caracteres: ${textarea.value.length}`;
+    });
+  </script>
+</body>
+</html>
