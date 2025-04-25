@@ -1,0 +1,48 @@
+pregunta 1:
+a.- ¿Qué es el DOM y cómo se relaciona con HTML?
+El DOM es una interfaz de programación que permite acceder y manipular la estructura de un documento HTML o XML. Representa la página web como un árbol de nodos, donde cada nodo es un objeto que representa una parte del contenido del documento, como elementos, atributos, texto, etc.
+
+En relación con HTML, el DOM convierte el contenido HTML en un objeto estructurado que puede ser manipulado mediante JavaScript. Así, cuando un navegador carga una página web, el DOM actúa como una representación en memoria de la estructura HTML que se puede modificar dinámicamente
+
+b.- Explica la diferencia entre:
+
+document.getElementById() vs document.querySelector().
+textContent vs innerHTML.
+
+
+c.- ¿Para qué sirve addEventListener? Proporciona un ejemplo.
+El método addEventListener se utiliza para registrar un evento en un elemento del DOM, permitiendo que se ejecute una función cuando ese evento ocurre. 
+
+d.- ¿Qué métodos del DOM se usan para capturar valores de un formulario?
+value: Se usa para obtener el valor de los campos de formulario, como inputs y selects.
+elements: Se utiliza para acceder a todos los elementos de un formulario 
+e.- Explica cómo prevenir el envío por defecto de un formulario con JavaScript.
+
+f.- ¿Qué es el "almacenamiento en memoria" y en qué se diferencia de localStorage?
+Para prevenir que un formulario se envíe de forma predeterminada (por ejemplo, cuando se hace clic en el botón de envío), se puede usar el método preventDefault() en el evento de "submit". Esto evita que el formulario se envíe y se recargue la página.
+pregunta2: 
+Dado el siguiente código:
+
+<button id="btn">Haz clic</button>
+<p id="mensaje"></p>
+document.getElementById("btn").addEventListener("click", () => {
+  document.getElementById("mensaje").textContent = "¡Botón presionado!";
+});
+Preguntas:
+
+¿Qué hace el código?
+Este código agrega un "listener" (escuchador de eventos) al botón con id="btn" para que, cuando se haga clic en él, se modifique el contenido del párrafo con id="mensaje".
+
+¿Qué pasaría si cambiamos textContent por innerHTML?
+Si cambias textContent por innerHTML en este caso no cambia nada visualmente, porque solo estás insertando texto plano.
+
+Pero si el contenido tuviera etiquetas HTML, con innerHTML sí se interpretarían, y con textContent se mostrarían como texto normal.
+
+ 
+Preguntas3:
+
+
+¿Qué hace el código al enviar el formulario?
+Cada vez que se envía un nombre, se añade a la lista visual sin recargar la página.
+¿Cómo se simula la "persistencia de datos" aquí?
+Se simula la persistencia usando una variable en memoria usuarios, pero los datos desaparecen al recargar, ya que no se guardan en ningún almacenamiento persistente
